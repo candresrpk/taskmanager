@@ -1,0 +1,20 @@
+{% extends './base.html' %}
+
+
+{% block title %} Home {% endblock  %}
+
+
+{% block content %}
+
+    
+    <h1>Welcom to my task app</h1>
+    <p>This is a simple task app developed using Django.</p>
+
+    {% if user.is_authenticated %}
+
+        <a href="{% url "tasks:tasks" %}">Go to the tasks manager</a>
+    {% else %}
+        <a href="{% url "users:login" %}">Login to manage your tasks</a>
+    {% endif %}
+
+{% endblock  %}

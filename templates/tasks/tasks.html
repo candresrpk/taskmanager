@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+
+{% block title %} Tasks {% endblock  %}
+
+
+{% block content %}
+
+    
+    <h1>Tasks</h1>
+
+    {% if tasks %}
+        <ul>
+            {% for task in tasks %}
+            <li>{{ task.title }}</li>
+            <li>{{ task.description }}</li>
+
+            <li>
+                <a href="{% url "tasks:edit_task" task.id %}">Edit</a>
+                <a href="{% url "tasks:delete_task" task.id %}">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks found.</p>
+    {% endif %}
+
+{% endblock  %}

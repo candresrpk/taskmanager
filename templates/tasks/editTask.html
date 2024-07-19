@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+
+{% block title %} Create Tasks {% endblock  %}
+
+
+{% block content %}
+
+    
+    <div class="card">
+        <div class="card-header">
+            <p>{{error}}</p>
+            <h2>Editar task</h2>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Datos de la tarea</h4>
+
+            {% include "./tasksForm.html" %}
+
+        </div>
+        <div class="card-footer text-muted">
+            <p class="muted">made by - {{user.username}}</p>
+        </div>
+    </div>
+
+    
+
+{% endblock  %}
